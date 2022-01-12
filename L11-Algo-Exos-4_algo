@@ -1,0 +1,165 @@
+Exercice 1
+
+//BUT : Connaitre le nombre de ville
+//ENTREE : nombre d'habitant
+//SORTIE : nombre de ville
+VAR :
+ent_population,ent_ville<-0 : ENTIER
+
+DEBUT
+	REPETER
+		ECRIRE "Inscrire le nombre d'habitants ou -1 pour terminer"
+		LIRE ent_population
+		SI ent_population >= 10 000
+		ALORS ent_ville<- ent_ville + 1
+	JUSQU'A ent_population <- -1
+FIN
+___________________________________________________________
+
+Exercice 2
+
+//BUT : connaitre le prix de la chambre pour une personne
+//ENTREE : age et poids des bagages
+//SORTIE : prix total
+VAR :
+ent_age, ent_poids<- 0, prix_total, prix_poids : ENTIER
+
+DEBUT
+	ECRIRE "Entrez votre âge"
+	LIRE ent_age
+	ECRIRE "Entrez le poids de vos valises"
+	LIRE ent_poids
+	CAS prix_total PARMI
+		CAS ent_age<10: prix_total<- 5
+		CAS ent_age=60: prix_total<- 0
+		PARDEFAUT:
+				   SI ent_poids>=20
+				   ALORS prix_poids<- 10
+				   prix_total<- 30 + prix_poids
+	FINCASPARMI
+	ECRIRE "Le prix total est de" + prix_total
+FIN
+_________________________________________________________
+
+Exercice 3
+
+//BUT : Créer une alerte lorsque la salle est pleine
+//ENTREE : nombre de personnes entrant ou sortant
+//SORTIE : La capacité de la salle
+VAR :
+personne, capacite<-0: ENTIER
+
+DEBUT
+	TANTQUE (capacite>0)
+	FAIRE
+		ECRIRE "Saisir le nombre de personne entrant dans la start to play"
+		LIRE personne
+		SI capacite<250
+		ALORS capacite=personne+capacite
+		SINON ECRIRE "Nombre maximum atteint"
+	FINTANTQUE
+FIN
+________________________________________________________
+
+Exercice 4-1 //non réussi
+
+//BUT : 
+//ENTREE : un nombre
+//SORTIE : un triangle
+VAR :
+ i ,j : ENTIER
+
+DEBUT
+	Pour i DE 1 A 8 
+	FAIRE 
+		ECRIRE X
+		ECRIRE /n
+		SI i >= 3 ET j<6
+		ALORS
+			j <- j+1
+			POUR j DE 0 A j 
+			FAIRE
+				ECRIRE O
+FIN
+
+
+Exercice 4-2  
+
+//BUT : faire une triangle
+//ENTREE : un nombre
+//SORTIE : un triangle
+VAR :
+ i, i_1<- 9, nb<- 0: ENTIER
+
+DEBUT
+	TANTQUE (i_1>0) FAIRE
+		Pour i DE 0 A i_1 
+		FAIRE 
+			ECRIRE nb
+		FINPOUR
+		nb<- nb+1
+		i_1<- i_1 - 1
+		ECRIRE "/n"
+	FINTANTQUE
+FIN
+__________________________________________________________
+
+Exercice 5 //non réussi
+
+//BUT : réaliser un carré
+//ENTREE : L l et c1 c2
+//SORTIE : un carré
+VAR :
+ L, l: ENTIER
+ c1, c2 : CARACTERE
+
+DEBUT
+	ECRIRE "Ecrire les caractères c1 et c2 désirés puis la longueur et largeur du carré"
+	LIRE c1,c2,L,l
+	TANTQUE (j#3) FAIRE
+		POUR i DE 0 A L FAIRE
+
+
+FIN
+___________________________________________________________
+
+Exercice 6
+
+//BUT : 
+//ENTREE : population de la ville
+//SORTIE : jour toute la population est contaminée
+VAR :
+malade<- 1, popu, jour<- 1: ENTIER
+
+DEBUT
+	ECRIRE "population totale de la ville"
+	LIRE popu
+	TANTQUE popu> malade
+	FAIRE
+		malade<- malade + (malade * 2)
+		jour<- jour +1
+	FINTANTQUE
+	ECRIRE "Le jour où la population entière est contaminée:" + jour
+FIN
+_________________________________________________________
+
+Exercice 7
+
+//BUT : fabriquez une pyramide
+//ENTREE : nombre de pierre
+//SORTIE : hauteur et nombre de pierre utilisés
+VAR :
+max_pierre, hauteur<-1, pierre_utile<- 1,i<- 1: ENTIER
+
+DEBUT
+	ECRIRE "Entrez le nombre de pierre maximum pour composer la pyramide"
+	LIRE max_pierre
+	TANTQUE (pierre_utile<max_pierre)
+	FAIRE
+		pierre_utile<-pierre_utile+ i^2
+		hauteur<-hauteur+1
+		i<-i+1
+	FINTANTQUE
+	ECRIRE "la hauteur est de"+ hauteur
+	ECRIRE "le nombre de pierre nécessaire est de" + pierre_utile
+FIN
